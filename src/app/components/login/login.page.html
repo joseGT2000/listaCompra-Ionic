@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>SUPERMERCADO PRECOGNIS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+    <h1>Login</h1>
+    <img src="assets/icon/ny9aUfzR_400x400.png" alt="">
+  </div>
+  <form id="form" [formGroup]="user">
+    <ion-input formControlName="username" placeholder="Introduce tu usuario"></ion-input>
+    <ion-label color="danger" *ngIf="user.controls.username.errors?.required && (user.controls.username.touched || user.controls.username.dirty)">El nombre es obligatorio</ion-label>
+    <ion-input type="password" formControlName="password" placeholder="Introduce tu contraseña"></ion-input>
+    <ion-label color="danger" *ngIf="user.controls.password.errors?.required && (user.controls.password.touched || user.controls.password.dirty)">La contraseña es obligatoria</ion-label>
+    <ion-label color="danger" *ngIf="user.controls.password.errors?.minlength && (user.controls.password.touched || user.controls.password.dirty)">La contraseña tiene que tener mínimo 4 carácteres</ion-label>
+    <ion-button expand="block" shape="round" (click)="onLogin()" >LOGIN</ion-button>
+    <ion-button routerLink= "/signup" expand="block" shape="round">REGISTRARSE</ion-button>
+    
+  </form>
+  <hr size="5px" color=black width="75%"/>
+  <p id="precognis">© 2021. Powered by Precognis. Aviso legal</p>
+</ion-content>
+

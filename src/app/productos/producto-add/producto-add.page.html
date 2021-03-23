@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/productos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Agrega un nuevo producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-input type="text" placeholder="Nombre del producto" #nombre></ion-input>
+          <ion-input type="text" inputmode="url" placeholder="Imagen" #imagen></ion-input>
+          <ion-input type="text"  placeholder="Cantidad" #cantidad></ion-input>
+          <ion-select placeholder="Departamento al que pertenece"  #departamento>
+            <ion-select-option value="Carniceria">Carniceria</ion-select-option>
+            <ion-select-option value="Pescaderia">Pescaderia</ion-select-option>
+            <ion-select-option value="Lacteos">Lacteos</ion-select-option>
+            <ion-select-option value="Panaderia">Panaderia</ion-select-option>
+            <ion-select-option value="Fruteria">Fruteria</ion-select-option>
+            <ion-select-option value="Limpieza">Limpieza</ion-select-option>
+          </ion-select>
+
+          <ion-button color="primary" (click)="guardarProducto(nombre, imagen, cantidad, departamento)">GUARDAR
+
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

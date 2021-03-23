@@ -1,0 +1,32 @@
+<ion-app>
+  <ion-menu side="start" menuId="first" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Start Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item (click)="goHome()">
+          <ion-icon name="home"></ion-icon>
+          Pagina principal 
+        </ion-item>
+        <ion-item (click)="goHogar()">
+          <ion-icon name="nutrition"></ion-icon>
+          Productos hogar 
+        </ion-item>
+        <ion-item (click)="goLista()">
+          <ion-icon name="logo-bitcoin"></ion-icon>
+          Lista de la compra 
+        </ion-item>
+        <ion-item (click)="goMenu()">
+          <ion-icon name="restaurant"></ion-icon>
+          Menu Semana
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

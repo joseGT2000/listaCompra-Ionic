@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-menu-toggle auto-hide=false></ion-menu-toggle>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="warning" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista de la compra</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let producto of lista">
+    <ion-avatar slot="start">
+      <ion-img [src]="producto.imgProducto"></ion-img>
+    </ion-avatar>
+    <ion-item>
+      <ion-label>
+        {{ producto.nombreProducto }}
+      </ion-label>
+    </ion-item>
+  <ion-item>
+    <ion-label>
+      <h3>Qt. {{ producto.cantidad }}</h3>
+    </ion-label>
+  </ion-item>
+    <ion-label class="alignme">
+      <ion-button (click)="comprar(producto.id)">
+        <ion-label>
+          comprar
+        </ion-label>
+      </ion-button>
+    </ion-label>
+  </ion-item>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" color="medium" (click)="addNuevoProducto()">
+    <ion-label>Añadir Producto</ion-label>
+  </ion-button>
+</ion-footer>

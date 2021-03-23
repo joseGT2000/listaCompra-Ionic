@@ -1,0 +1,49 @@
+<ion-header> 
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/productos"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{producto.nombreProducto}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="ion-padding">
+        <ion-img [src]="producto.imgProducto"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center">{{producto.nombreProducto}}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <ion-text>
+            <p class="ion-text-center">Departamento: {{producto.departamento}}</p>
+          </ion-text>
+      </ion-col>
+    </ion-row>
+    <br/><br/>
+    <ion-row>
+      <ion-col class="ion-text-right">
+        <ion-icon name="remove-outline" (click)="decrement(producto.id)"></ion-icon>
+      </ion-col>
+      <ion-col  class="ion-text-center">
+        <div style="font-size: 40px;">{{producto.cantidad}}</div>
+      </ion-col>
+      <ion-col class="ion-text-left">
+        <ion-icon name="add-outline" (click)="increment(producto.id)"></ion-icon>
+      </ion-col>
+    </ion-row>
+    <br/>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <div color="primary">(Modificar cantidad actual)</div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+

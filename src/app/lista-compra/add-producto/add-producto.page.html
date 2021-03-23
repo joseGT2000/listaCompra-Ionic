@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-menu-toggle auto-hide=false></ion-menu-toggle>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button color="warning" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/lista-compra"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Añadir Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content>
+          <ion-input text="text" placeholder="Escribe el nombre del producto" #title></ion-input>
+          <ion-input text="text" inputmode="url" placeholder="Url de la imagen" #imageURL></ion-input>
+          <ion-input type="number" placeholder="Cantidad del producto" #cantidad></ion-input>
+          <ion-select placeholder="Departamento al que pertenece"  #departamento>
+            <ion-select-option value="Carniceria">Carniceria</ion-select-option>
+            <ion-select-option value="Pescaderia">Pescaderia</ion-select-option>
+            <ion-select-option value="Lacteos">Lacteos</ion-select-option>
+            <ion-select-option value="Panaderia">Panaderia</ion-select-option>
+            <ion-select-option value="Fruteria">Fruteria</ion-select-option>
+            <ion-select-option value="Limpieza">Limpieza</ion-select-option>
+          </ion-select>
+          <ion-button color="primary" (click)="save(title, imageURL, cantidad, departamento)"> SAVE</ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
